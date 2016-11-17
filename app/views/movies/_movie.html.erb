@@ -1,1 +1,24 @@
-<p><%= link_to movie.title, movie_path(movie) %></p>
+
+
+<div class="col s6 m6">
+  <h2 class="header"></h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img height="300" src=<%= movie.poster %>>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><%= movie.description.split(' ')[0..15].join(' ') + '...' %></p>
+
+        <img height="30" src=/images/popcorn.png>
+        <img height="30" src=/images/popcorn.png>
+        <img height="30" src=/images/popcorn.png>
+      </div>
+      <div class="card-action">
+       	
+        <%= link_to movie.title, movie_path(movie) %>
+
+      </div>
+    </div>
+  </div>
+</div>
