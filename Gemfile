@@ -35,8 +35,8 @@ gem 'materialize-sass'
 # OMDB API
 gem 'omdbapi'
 
-gem 'pry'
-gem 'pry-byebug'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -44,6 +44,11 @@ gem 'pry-byebug'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  gem 'pry'
+	gem 'pry-byebug'
+
+	gem 'faker'
 end
 
 group :development do
