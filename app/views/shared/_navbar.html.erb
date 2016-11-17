@@ -1,0 +1,11 @@
+<ul>
+	<li><%= link_to "Home", root_path %></li>
+  <% if current_user %>
+    <li>Signed in as <%= current_user.username %></li>
+    <li> <%= link_to "Logout", '/logout' %></li>
+  <% else %>
+	  <li><%= link_to 'Login', '/login' %></li>
+	  <li><%= link_to 'Signup', '/signup' %></li>
+  <% end %>
+</ul>
+<hr>
