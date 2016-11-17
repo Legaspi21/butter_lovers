@@ -1,7 +1,35 @@
-<h1>Index Page</h1>
+<div class="section grey-text text-darken-3 center-align">  
+  <h3>Movies</h3>
+</div>
 
-<p><%= link_to 'comedy', '/movies/category/comedy' %></p>
-<p><%= link_to 'drama', '/movies/category/drama' %></p>
+<%= render 'search' %>
 
-<%= render partial: 'movie', collection: @movies %>
 
+<div class="row">
+  <!-- <div class="col s6">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input type="text" id="autocomplete-input" class="autocomplete">
+        <label for="autocomplete-input">Search for a movie</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="category-combo" class="col s6">
+    <select>
+      <option value="" disabled selected>Choose a category</option>
+      <option value="1">Comedy</option>
+      <option value="2">Drama</option>
+      <option value="3">Action</option>
+    </select>
+    <label>Materialize Select</label>
+
+  </div> -->
+</div>
+
+<div class="row">
+     
+  <%= render partial: 'movie', collection: @movies %>
+
+</div>

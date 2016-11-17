@@ -12,15 +12,6 @@
 # 	Movie.create(title: "Star Wars#{n+1}", description: "luke skywalker#{n+1}", category: "#{n < 10 ? "comedy" : "drama"}") 
 # end 
 
-
-
-
-# game_of_thrones = OMDB.title('Game of Thrones')
-
-# Movie.create(title: game_of_thrones.title, description: game_of_thrones.plot, category: "drama", director:,rated:,release_date:,poster:,actors:,runtime:,genre:)
-
-# rails g migration AddColumnsToMovie director:string rated:string release_date:string poster:string actors:string runtime:string genre:string 
-
 movie_titles = ["Sixteen Candles", "Exit through the Gift Shop", "Nymphomaniac: Volume I", "Results", "Meek’s Cutoff", "Jesus Camp", "Dope", "Tinker Tailor Soldier Spy", "Chef", "Grizzly Man", "Gladiator", "Philomena", "I Am Love", "Seymour: An Introduction", "Top Gun", "Blue is the Warmest Color", "Short Term 12", "Wet Hot American Summer", "The Big Short", "Heaven Knows What", "Frank", "Breathe", "Phoenix", "Scrooged", "Zack and Miri Make a Porno", "A Hijacking", "Muscle Shoals", "Ain’t Them Bodies Saints", "Swingers", "The Look of Silence", "Coming To America", "Force Majeure", "The Trip", "Frances Ha", "The Imitation Game", "The Babadook", "Gomorrah", "Iris", "Clueless", "Following", "Hot Fuzz", "Nightcrawler", "Saving Private Ryan", "American Beauty", "Chasing Amy", "Bernie", "Janis: Little Girl Blue", "Beginners", "Big Trouble In Little China", "Zootopia", "The African Queen", "Three Kings", "Good Will Hunting", "Mustang", "In the Loop", "The Act of Killing", "Two Days, One Night", "Jiro Dreams of Sushi", "Clerks", "The Sting", "Tell No One", "Fist of Legend", "Spotlight", "The Hustler", "To Kill a Mockingbird", "Time Out of Mind", "Sling Blade", "Django Unchained", "The Conformist", "Sunset Boulevard", "Unforgiven", "13th", "The Usual Suspects", "Waking Ned Devine", "Y Tu Mama Tambien", "Fruitvale Station", "Shakespeare in Love", "Cinema Paradiso", "Kagemusha", "Pirates of the Caribbean: The Curse of the Black Pearl", "Laura", "Beasts of No Nation", "True Grit", "Dazed and Confused", "Eternal Sunshine of the Spotless Mind", "Metropolis", "Ferris Bueller’s Day Off", "White God", "Cartel Land", "Trainspotting", "Man on Wire", "Once Upon a Time in the West", "The Princess Bride", "Amélie", "The Thin Blue Line", "Reservoir Dogs", "Moonrise Kingdom", "No Country For Old Men", "Pulp Fiction"]
 
 
@@ -40,7 +31,6 @@ end
 
 
 
-
 puts "database seed success"
 
 # Sample JSON response
@@ -53,3 +43,4 @@ puts "database seed success"
 # $('.big > a').map(function(){
 #                return $.trim($(this).text());
 #             }).get();
+

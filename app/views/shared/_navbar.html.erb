@@ -1,11 +1,15 @@
-<ul>
-	<li><%= link_to "Home", root_path %></li>
-  <% if current_user %>
-    <li>Signed in as <%= current_user.username %></li>
-    <li> <%= link_to "Logout", '/logout' %></li>
-  <% else %>
-	  <li><%= link_to 'Login', '/login' %></li>
-	  <li><%= link_to 'Signup', '/signup' %></li>
-  <% end %>
-</ul>
-<hr>
+
+<nav>
+  <div class="nav-wrapper">
+  	<a href="/" class="brand-logo"><i class="material-icons">theaters</i>Butter Lovers</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user %>
+		    <li><a href="/users/<%= current_user.id %>"><i class="material-icons left">perm_identity</i><%= current_user.username %></a></li>
+		    <li><a href="/logout"><i class="material-icons left">stop</i>Logout</a></li>
+		  <% else %>
+			  <li><a href="/signup" class="waves-effect waves-light btn">Signup</a></li>
+			  <li><a href="/login"><i class="material-icons left">play_arrow</i>Login</a></li>
+		  <% end %>
+    </ul>
+  </div>
+</nav>
