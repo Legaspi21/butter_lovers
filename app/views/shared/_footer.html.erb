@@ -1,0 +1,28 @@
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Butter Lovers</h5>
+        <p class="grey-text text-lighten-4">Simply best movie review website!</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+        <% if current_user %>
+          <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+          <li><a href="/users/<%= current_user.id %>" class="grey-text text-lighten-3"><%= current_user.username %>'s account page</a></li>
+          <li><a href="/logout" class="grey-text text-lighten-3">Logout</a></li>
+        <% else %>
+           <li><a href="/signup" class="grey-text text-lighten-3">Signup</a></li>
+           <li><a href="/login" class="grey-text text-lighten-3">Login</a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2016 Butter Lovers, All rights reserved.
+    </div>
+  </div>
+</footer>
