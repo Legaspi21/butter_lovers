@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
 
 	def index 
+		# Movie.where("category like ?", "%comedy%")
 	@category = params[:category]
 		if @category
 			@movies = Movie.where(category: @category)

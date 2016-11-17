@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Materilize
 gem 'materialize-sass'
 
+# OMDB API
+gem 'omdbapi'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
