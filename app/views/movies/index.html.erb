@@ -1,4 +1,62 @@
-<h1>Index Page</h1>
+<div class="section grey-text text-darken-3 center-align">  
+  <h3>Movies</h3>
+</div>
+<div class="row">
+  <div class="col s6">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input type="text" id="autocomplete-input" class="autocomplete">
+        <label for="autocomplete-input">Search for a movie</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="category-combo" class="col s6">
+    <select>
+      <option value="" disabled selected>Choose a category</option>
+      <option value="1">Comedy</option>
+      <option value="2">Drama</option>
+      <option value="3">Action</option>
+    </select>
+    <label>Materialize Select</label>
+
+  </div>
+</div>
+        
+<div class="row">
+  <div class="col s6">
+    <div class="card small">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator responsive-img" height="100" width="30" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5ODQwNzIxNV5BMl5BanBnXkFtZTYwNzAyMDE3._V1_SX300.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">This is a link</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s6">
+    <div class="card large">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator responsive-img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5ODQwNzIxNV5BMl5BanBnXkFtZTYwNzAyMDE3._V1_SX300.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">This is a link</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p><%= link_to 'comedy', '/movies/category/comedy' %></p>
 <p><%= link_to 'drama', '/movies/category/drama' %></p>

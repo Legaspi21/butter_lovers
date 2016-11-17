@@ -1,13 +1,33 @@
 <%= render '/shared/error_messages' %>
 
 <%= form_for @user do |f| %>
+	<div class="input-field col s12">
+		<i class="material-icons prefix">account_circle</i>
+		<%= label_tag(:username, "User Name:") %>
+	  <%= f.text_field :username, class: "validate" %>
+  </div>
 
-  UserName: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <div class="input-field col s12">
+  	<i class="material-icons prefix">email</i>
+ 		<%= label_tag(:email, "Email:") %>
+ 		<%= f.text_field :email, class: "validate" %>
+  </div>
 
+  <div class="input-field col s12">
+ 	 <i class="material-icons prefix">vpn_key</i>
+ 		<%= label_tag(:password, "Password:") %>
+ 		<%= f.text_field :password, class: "validate" %>
+  </div>
+
+  <div class="input-field col s12">
+  	<i class="material-icons prefix">vpn_key</i>
+ 		<%= label_tag(:password_confirmation, "Password Confirmation:") %>
+ 		<%= f.text_field :password_confirmation, class: "validate" %>
+  </div>
+
+  <div class="input-field col s12">
+  	<%= f.submit "Submit", class: "btn waves-effect waves-light right" %>
+  </div>
 <% end %>
 
 
