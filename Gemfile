@@ -35,6 +35,9 @@ gem 'materialize-sass'
 # OMDB API
 gem 'omdbapi'
 
+gem 'pry'
+gem 'pry-byebug'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
