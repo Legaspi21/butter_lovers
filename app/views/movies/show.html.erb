@@ -1,1 +1,8 @@
-<%= render partial: 'movie', locals: { movie: @movie} %>
+
+
+<%= @movie.title %>
+
+<%= render partial: 'comments', member: @movie %>
+
+<%= render partial: 'reviews', member: @movie %>
+

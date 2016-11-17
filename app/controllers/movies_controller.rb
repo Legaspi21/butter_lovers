@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
 
+
 	def index 
 	@category = params[:category]
 		if @category
@@ -14,3 +15,4 @@ class MoviesController < ApplicationController
 	end 
 
 end 
+
