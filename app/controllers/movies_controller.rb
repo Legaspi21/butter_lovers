@@ -9,14 +9,13 @@ class MoviesController < ApplicationController
       @movies = Movie.search(@movie_title)
       render :index
   else 
-  		flash[:notice] = "Sorry, we couldn't find any titles matching: #{@movie_title}"
       @movies = Movie.all
   end
 
 	@category = params[:category]
 
 		if @category
-			@movies = Movie.where(category: @category)
+			@movies = Movie.where("category like ?", "%#{@category}%")
 		else 
 			@movies = Movie.all
 		end 
