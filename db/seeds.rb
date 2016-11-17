@@ -12,26 +12,49 @@
 # 	Movie.create(title: "Star Wars#{n+1}", description: "luke skywalker#{n+1}", category: "#{n < 10 ? "comedy" : "drama"}") 
 # end 
 
-movie_titles = ["Sixteen Candles", "Exit through the Gift Shop", "Nymphomaniac: Volume I", "Results", "Meek’s Cutoff", "Jesus Camp", "Dope", "Tinker Tailor Soldier Spy", "Chef", "Grizzly Man", "Gladiator", "Philomena", "I Am Love", "Seymour: An Introduction", "Top Gun", "Blue is the Warmest Color", "Short Term 12", "Wet Hot American Summer", "The Big Short", "Heaven Knows What", "Frank", "Breathe", "Phoenix", "Scrooged", "Zack and Miri Make a Porno", "A Hijacking", "Muscle Shoals", "Ain’t Them Bodies Saints", "Swingers", "The Look of Silence", "Coming To America", "Force Majeure", "The Trip", "Frances Ha", "The Imitation Game", "The Babadook", "Gomorrah", "Iris", "Clueless", "Following", "Hot Fuzz", "Nightcrawler", "Saving Private Ryan", "American Beauty", "Chasing Amy", "Bernie", "Janis: Little Girl Blue", "Beginners", "Big Trouble In Little China", "Zootopia", "The African Queen", "Three Kings", "Good Will Hunting", "Mustang", "In the Loop", "The Act of Killing", "Two Days, One Night", "Jiro Dreams of Sushi", "Clerks", "The Sting", "Tell No One", "Fist of Legend", "Spotlight", "The Hustler", "To Kill a Mockingbird", "Time Out of Mind", "Sling Blade", "Django Unchained", "The Conformist", "Sunset Boulevard", "Unforgiven", "13th", "The Usual Suspects", "Waking Ned Devine", "Y Tu Mama Tambien", "Fruitvale Station", "Shakespeare in Love", "Cinema Paradiso", "Kagemusha", "Pirates of the Caribbean: The Curse of the Black Pearl", "Laura", "Beasts of No Nation", "True Grit", "Dazed and Confused", "Eternal Sunshine of the Spotless Mind", "Metropolis", "Ferris Bueller’s Day Off", "White God", "Cartel Land", "Trainspotting", "Man on Wire", "Once Upon a Time in the West", "The Princess Bride", "Amélie", "The Thin Blue Line", "Reservoir Dogs", "Moonrise Kingdom", "No Country For Old Men", "Pulp Fiction"]
+# movie_titles = ["Sixteen Candles", "Exit through the Gift Shop", "Nymphomaniac: Volume I", "Results", "Meek’s Cutoff", "Jesus Camp", "Dope", "Tinker Tailor Soldier Spy", "Chef", "Grizzly Man", "Gladiator", "Philomena", "I Am Love", "Seymour: An Introduction", "Top Gun", "Blue is the Warmest Color", "Short Term 12", "Wet Hot American Summer", "The Big Short", "Heaven Knows What", "Frank", "Breathe", "Phoenix", "Scrooged", "Zack and Miri Make a Porno", "A Hijacking", "Muscle Shoals", "Ain’t Them Bodies Saints", "Swingers", "The Look of Silence", "Coming To America", "Force Majeure", "The Trip", "Frances Ha", "The Imitation Game", "The Babadook", "Gomorrah", "Iris", "Clueless", "Following", "Hot Fuzz", "Nightcrawler", "Saving Private Ryan", "American Beauty", "Chasing Amy", "Bernie", "Janis: Little Girl Blue", "Beginners", "Big Trouble In Little China", "Zootopia", "The African Queen", "Three Kings", "Good Will Hunting", "Mustang", "In the Loop", "The Act of Killing", "Two Days, One Night", "Jiro Dreams of Sushi", "Clerks", "The Sting", "Tell No One", "Fist of Legend", "Spotlight", "The Hustler", "To Kill a Mockingbird", "Time Out of Mind", "Sling Blade", "Django Unchained", "The Conformist", "Sunset Boulevard", "Unforgiven", "13th", "The Usual Suspects", "Waking Ned Devine", "Y Tu Mama Tambien", "Fruitvale Station", "Shakespeare in Love", "Cinema Paradiso", "Kagemusha", "Pirates of the Caribbean: The Curse of the Black Pearl", "Laura", "Beasts of No Nation", "True Grit", "Dazed and Confused", "Eternal Sunshine of the Spotless Mind", "Metropolis", "Ferris Bueller’s Day Off", "White God", "Cartel Land", "Trainspotting", "Man on Wire", "Once Upon a Time in the West", "The Princess Bride", "Amélie", "The Thin Blue Line", "Reservoir Dogs", "Moonrise Kingdom", "No Country For Old Men", "Pulp Fiction"]
 
 
 
 
-result = []
+# result = []
 
-movie_titles.each do |x|
-	if OMDB.title(x).response != "False"
-		result << OMDB.title(x)		
-	end
+# movie_titles.each do |x|
+# 	if OMDB.title(x).response != "False"
+# 		result << OMDB.title(x)		
+# 	end
+# end
+
+# result.each do |movie|
+# 	Movie.create(title: movie.title, description: movie.plot, category: movie.genre,director:movie.director,rated:movie.rated,release_date:movie.released,poster:movie.poster,actors:movie.actors,runtime:movie.runtime)
+# end
+
+
+
+# puts "database seed success"
+
+puts "database seed begin"
+
+User.create(username:"darren",email:"darren@butterlovers.com",password:"password",is_critic: true)
+User.create(username:"aidan",email:"aidan@butterlovers.com",password:"password",is_critic: true)
+User.create(username:"jules",email:"jules@butterlovers.com",password:"password",is_critic: true)
+User.create(username:"julian",email:"julian@butterlovers.com",password:"password",is_critic: true)
+
+3.times do
+@current_movie = 1
+97.times do 
+@ratingint = [1,2,3,4,5].sample
+@userid = [2,3,4,5].sample	
+Review.create(rating:@ratingint,body:Faker::Lorem.paragraph(4, false, 8),user_id:@userid,movie_id:@current_movie)
+
+@current_movie += 1
 end
 
-result.each do |movie|
-	Movie.create(title: movie.title, description: movie.plot, category: movie.genre,director:movie.director,rated:movie.rated,release_date:movie.released,poster:movie.poster,actors:movie.actors,runtime:movie.runtime)
 end
 
+puts "database seed end"
 
 
-puts "database seed success"
 
 # Sample JSON response
 

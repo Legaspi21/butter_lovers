@@ -9,10 +9,9 @@
     <div class="card-stacked">
       <div class="card-content">
         <p><%= movie.description.split(' ')[0..15].join(' ') + '...' %></p>
-
-        <img height="30" src=/images/popcorn.png>
-        <img height="30" src=/images/popcorn.png>
-        <img height="30" src=/images/popcorn.png>
+        <% average_rating(movie.reviews).times do %>
+        	<img height="30" src=/images/popcorn.png>
+        <% end %>
       </div>
       <div class="card-action">
        	
