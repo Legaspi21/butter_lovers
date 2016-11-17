@@ -1,0 +1,7 @@
+<h1>Index Page</h1>
+
+<p><%= link_to 'comedy', '/movies/category/comedy' %></p>
+<p><%= link_to 'drama', '/movies/category/drama' %></p>
+
+<%= render partial: 'movie', collection: @movies %>
+

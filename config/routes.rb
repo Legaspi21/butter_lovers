@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
   # User Routes
   get '/signup' => 'users#new'
+  get 'movies/category/:category' => 'movies#index'
 
   resources :users, except: [:index, :new]
+
+  resources :movies, only: [:index, :show]
   
 end
