@@ -1,0 +1,8 @@
+<% if @errors %>
+  <h2>The form contains <%= pluralize(@errors.count, "error") %></h2>
+  <ul>
+    <% @errors.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>

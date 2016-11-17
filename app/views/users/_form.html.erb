@@ -1,0 +1,14 @@
+<%= render '/shared/error_messages' %>
+
+<%= form_for @user do |f| %>
+
+  UserName: <%= f.text_field :username %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+
+
