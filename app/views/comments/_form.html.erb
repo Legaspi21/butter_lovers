@@ -1,0 +1,19 @@
+
+<div class="row">
+  <%= form_for [@movie, @comment] do |f| %>
+  
+  
+
+    <div class="input-field col s12 m9">
+      <i class="material-icons prefix">chat_bubble</i>
+      <%= label_tag(:body, "Comment:") %>
+      <textarea id="body" name="comment[body]" class="materialize-textarea"></textarea>
+    </div>
+
+    <div id="comment-form-button" class="input-field col s12 m3">
+      <%= f.submit "Submit", class: "btn waves-effect waves-light right" %>
+    </div>
+  
+<% end %>
+
+</div>
