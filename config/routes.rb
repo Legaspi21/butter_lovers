@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :new]
 
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    resources :reviews, only: [:create, :show]
+  end
+
+
   
 end
