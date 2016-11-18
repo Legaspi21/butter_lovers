@@ -1,8 +1,6 @@
-comments partial page
 
-<% @movie.reviews.each do |review| %>
-	<p> THIS IS THE REVIEW BODY<%= review.body %></p>
-	<% review.comments.each do |comment| %>
-		<p style="color: red;">THIS IS THE COMMENT FOR THE REVIEW <%= comment.body %></p>
-	<% end %>
+<% @movie.comments.each do |comment| %>
+	<h5><%= comment.user.username %></h5>
+	<p><%= comment.body %></p>
+	
 <% end %>

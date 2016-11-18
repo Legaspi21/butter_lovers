@@ -7,7 +7,7 @@
       <img height="320" src=<%= movie.poster %>>
     </div>
     <div class="card-stacked">
-      <div class="card-content">
+      <div id="cards-content">
         <p><%= movie.description.split(' ')[0..15].join(' ') + '...' %></p>
         <% average_rating(movie.reviews).times do %>
         	<img height="30" src=/images/popcorn.png>
