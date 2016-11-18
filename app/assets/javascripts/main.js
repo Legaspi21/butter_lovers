@@ -1,15 +1,70 @@
+$(document).on("turbolinks:load", function(){
 
 
-$(document).ready(function() {
-  $('select').material_select();
+	$('#review-form').on('submit', newReview);
 
+	$('#comment-form').on('submit', newComment);
 
-	$('input.autocomplete').autocomplete({
-	    data: {
-	      "Apple": null,
-	      "Microsoft": null,
-	      "Google": 'http://placehold.it/250x250'
-	    }
-	  });
 
 });
+
+
+
+
+function newReview(event) {
+	event.preventDefault();
+	
+	var form = $(this);
+	var action = form.attr('action');
+	var method = form.attr('method');
+	var data = form.serialize();
+
+	$(form)[0].reset();
+	console.log(data);
+	$.ajax({
+		url: action,
+		method: method,
+		data: data
+	})
+	.done(function(response) {
+		console.log(response)
+		console.log(form)
+		$('#reviews-section').append(response);
+		
+	})
+	.fail(function(error) {
+		console.log(error);
+		alert(error.status);
+	});
+
+};
+
+
+
+function newComment(event) {
+	event.preventDefault();
+	
+	var form = $(this);
+	var action = form.attr('action');
+	var method = form.attr('method');
+	var data = form.serialize();
+
+	$(form)[0].reset();
+	console.log(data);
+	$.ajax({
+		url: action,
+		method: method,
+		data: data
+	})
+	.done(function(response) {
+		console.log(response)
+		console.log(form)
+		$('#comments-section').append(response);
+		
+	})
+	.fail(function(error) {
+		console.log(error);
+		alert(error.status);
+	});
+
+};

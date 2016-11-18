@@ -10,7 +10,7 @@
     </div>
     <div class="card-stacked">
       
-      <div class="card-content grey-text text-darken-2">
+      <div id="card-info" class="card-content grey-text text-darken-2">
       	<h5>Plot</h5>
         <p><%= @movie.description %></p>
         <h5>Director</h5>
@@ -38,12 +38,14 @@
   <h3>Reviews</h3>
 </div>
 
-<div class="section grey-text text-darken-2 left-align">
+<div id="reviews-section" class="section grey-text text-darken-2 left-align">
 
-  <%= render partial: 'reviews/form', member: @movie %>
+  <% if @current_user %>
+    <%= render partial: 'reviews/form', member: @movie %>
+  <% end %>
+  
 
-
-  <%= render partial: 'reviews', member: @movie %>
+  <%= render partial: 'review', collection: @reviews %>
 
  </div>
 
@@ -54,12 +56,14 @@
 
 
 
-<div class="section grey-text text-darken-2 left-align">
+<div id="comments-section" class="section grey-text text-darken-2 left-align">
 
-  <%= render partial: 'comments/form', member: @movie %>
+  <% if @current_user %>
+    <%= render partial: 'comments/form', member: @movie %>
+  <% end %>
 
 
-  <%= render partial: 'comments', member: @movie %>
+  <%= render partial: 'comment', collection: @comments %>
 
  </div>
 

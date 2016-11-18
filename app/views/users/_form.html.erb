@@ -10,19 +10,19 @@
   <div class="input-field col s12">
   	<i class="material-icons prefix">email</i>
  		<%= label_tag(:email, "Email:") %>
- 		<%= f.text_field :email, class: "validate" %>
+ 		<%= f.email_field :email, class: "validate" %>
   </div>
 
   <div class="input-field col s12">
  	 <i class="material-icons prefix">vpn_key</i>
  		<%= label_tag(:password, "Password:") %>
- 		<%= f.text_field :password, class: "validate" %>
+ 		<%= f.password_field :password, class: "validate" %>
   </div>
 
   <div class="input-field col s12">
   	<i class="material-icons prefix">vpn_key</i>
  		<%= label_tag(:password_confirmation, "Password Confirmation:") %>
- 		<%= f.text_field :password_confirmation, class: "validate" %>
+ 		<%= f.password_field :password_confirmation, class: "validate" %>
   </div>
 
   <div class="input-field col s12">
