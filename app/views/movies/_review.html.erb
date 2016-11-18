@@ -1,6 +1,5 @@
 
 
-<%# @movie.reviews.each do |review| %>
 	
 	<h5><span class="new badge <%= review.user.is_critic ? "red" : "blue" %>" data-badge-caption="reviews"><%= review.user.reviews.size %></span><%= review.user.username %></h5>
 	<p><%= review.body %></p>
@@ -14,5 +13,5 @@
 		<p><%= comment.body %></p>
 		<div class="divider"></div>
 	<% end %>
-<%# end %>
+
 

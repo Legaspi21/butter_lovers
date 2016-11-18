@@ -23,8 +23,11 @@ class MoviesController < ApplicationController
 		@movie = Movie.find(params[:id])
 		@review = Review.new
 		@comment = Comment.new
-		@reviews = @movie.reviews
+		# binding.pry
+		# @reviews = @movie.reviews.sort {|a,b| (a.user.is_critic <=> b.user.is_critic}
+		@reviews = @movie.reviews.sort_by {|a| a.user.is_critic ? 0 : 1 }
 
+		@comments = @movie.comments
 	end 
 
 end 

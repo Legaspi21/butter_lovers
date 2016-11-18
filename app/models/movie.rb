@@ -8,4 +8,6 @@ class Movie < ApplicationRecord
    	where("title ILIKE ? ", "%#{movie_title}%") 
  	end
 
+
+
 end

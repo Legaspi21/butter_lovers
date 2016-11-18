@@ -45,9 +45,6 @@
   <% end %>
   
 
-
-  <%# render partial: 'reviews', member: @movie %>
-
   <%= render partial: 'review', collection: @reviews %>
 
  </div>
@@ -65,7 +62,8 @@
     <%= render partial: 'comments/form', member: @movie %>
   <% end %>
 
-  <%= render partial: 'comments', member: @movie %>
+
+  <%= render partial: 'comment', collection: @comments %>
 
  </div>
 
