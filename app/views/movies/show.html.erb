@@ -1,8 +1,57 @@
+<div class="section grey-text text-darken-3 center-align">  
+  <h3><%= @movie.title %></h3>
+</div>
+
+<div class="col s12 m12">
+  <h2 class="header"></h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img height="600" src=<%= @movie.poster %>>
+    </div>
+    <div class="card-stacked">
+      
+      <div class="card-content grey-text text-darken-2">
+      	<h5>Plot</h5>
+        <p><%= @movie.description %></p>
+        <h5>Director</h5>
+        <p><%= @movie.director %></p>
+        <h5>Main Actors</h5>
+        <p><%= @movie.actors %></p>
+        <h5>Release Date</h5>
+        <p><%= @movie.release_date %></p>
+        <h5>Genre</h5>
+        <p><%= @movie.category %></p>
+      </div>
+      
+      <div class="card-action">
+       	
+        <% average_rating(@movie.reviews).times do %>
+        	<img height="30" src=/images/popcorn.png>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section grey-text text-darken-3 center-align">  
+  <h3>Reviews</h3>
+</div>
+
+<div class="section grey-text text-darken-2 left-align">
+
+<%= render partial: 'reviews/form', member: @movie %>
 
 
-<%= @movie.title %>
+  <%= render partial: 'reviews', member: @movie %>
+
+ </div>
+
+<div class="section grey-text text-darken-3 center-align">  
+  <h3>Movie Comments</h3>
+</div>
 
 <%= render partial: 'comments', member: @movie %>
 
-<%= render partial: 'reviews', member: @movie %>
+
 
