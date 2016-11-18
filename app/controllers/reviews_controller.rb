@@ -3,11 +3,8 @@ class ReviewsController < ApplicationController
 
 
 	def create
-		p params
-		
 		@movie = Movie.find_by_id(params[:movie_id])
-		p @movie
-		p "*"*60
+		
 		@review = Review.new(review_params)
 		@review.user = @current_user
 		@review.movie = @movie

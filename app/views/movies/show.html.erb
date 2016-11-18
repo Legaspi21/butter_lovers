@@ -40,7 +40,7 @@
 
 <div class="section grey-text text-darken-2 left-align">
 
-<%= render partial: 'reviews/form', member: @movie %>
+  <%= render partial: 'reviews/form', member: @movie %>
 
 
   <%= render partial: 'reviews', member: @movie %>
@@ -51,7 +51,16 @@
   <h3>Movie Comments</h3>
 </div>
 
-<%= render partial: 'comments', member: @movie %>
 
+
+
+<div class="section grey-text text-darken-2 left-align">
+
+  <%= render partial: 'comments/form', member: @movie %>
+
+
+  <%= render partial: 'comments', member: @movie %>
+
+ </div>
 
 

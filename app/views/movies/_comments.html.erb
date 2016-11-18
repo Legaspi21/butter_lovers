@@ -1,4 +1,6 @@
 
 <% @movie.comments.each do |comment| %>
-<p style="color: green;">THIS IS THE MOVIE COMMENT<%= comment.body %>	</p>
+	<h5><%= comment.user.username %></h5>
+	<p><%= comment.body %></p>
+	
 <% end %>
