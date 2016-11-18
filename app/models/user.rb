@@ -14,4 +14,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates_uniqueness_of :username
 
+  before_create do
+    self.is_critic = false if self.is_critic.nil?
+  end
+
 end
