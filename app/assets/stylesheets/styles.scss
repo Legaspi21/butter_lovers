@@ -29,6 +29,8 @@ nav {
   padding-bottom: 5px;
 }
 
+
+
 body {
     display: flex;
     min-height: 100vh;
@@ -41,4 +43,13 @@ main {
     
 #review-form-rating, #review-form-button, #comment-form-button {
 	margin-top: 50px;
+}
+
+#review-card {
+  background-color: #e0e0e0;
+
+}
+
+#edit-button {
+  background-color: teal;
 }

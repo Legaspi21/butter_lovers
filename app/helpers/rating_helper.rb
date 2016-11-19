@@ -8,4 +8,9 @@ module RatingHelper
 		end
 	end
 
+	def favorite_movies(user)
+		user.reviews.select { |review| review.rating == 5 }
+		.map { |review| review.movie }
+	end
+
 end

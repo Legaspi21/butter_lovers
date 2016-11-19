@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
 
 	def create
 		@user = User.find_by_email(params[:email])
-    
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to '/'
-    else
-    	flash[:alert] = "Please type valid email and password."
-      redirect_to '/login'
-    end
+		
+		if @user && @user.authenticate(params[:password])
+			session[:user_id] = @user.id
+			redirect_to '/'
+		else
+			flash[:alert] = "Please type valid email and password."
+			redirect_to '/login'
+		end
 	end
 
 	def destroy

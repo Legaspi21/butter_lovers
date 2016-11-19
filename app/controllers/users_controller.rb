@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 
 	def show
-		
+		@user = current_user
 	end
 
 	def new
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		
+		@user = current_user
 	end
 
 	def create
@@ -26,7 +26,13 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		
+		@user = current_user
+
+		if @user.update(users_params)
+			redirect_to @user
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -35,7 +41,7 @@ class UsersController < ApplicationController
 
 
 
-private
+	private
 
 	def users_params
 		params.require(:user).permit(:username, :email, :password)
