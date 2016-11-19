@@ -1,6 +1,6 @@
 
 <div class="row">
-  <%= form_for [@movie, @review] do |f| %>
+  <%= form_for [@movie, @review], html: {id: "review-form"} do |f| %>
   
   
 
@@ -13,11 +13,11 @@
     <div id="review-form-rating" class="input-field col s12 m3">
       <i class="material-icons prefix">thumbs_up_down</i>
       <%= label_tag(:rating, "Rate: 1 to 5") %>
-      <%= f.text_field :rating, class: "validate" %>
+      <%= f.text_field :rating, class: "validate", pattern: "1|2|3|4|5" %>
     </div>
 
     <div id="review-form-button" class="input-field col s12 m3">
-      <%= f.submit "Submit", class: "btn waves-effect waves-light right" %>
+      <%= f.submit "Submit", class: "btn waves-effect waves-light right " %>
     </div>
   
 <% end %>

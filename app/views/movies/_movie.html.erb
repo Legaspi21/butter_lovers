@@ -3,12 +3,13 @@
 <div class="col s12 m6">
   <h2 class="header"></h2>
   <div class="card horizontal">
+
     <div class="card-image z-depth-1">
-      <img height="320" src=<%= movie.poster %>>
+      <a href=<%= movie_path(movie) %>><img height="320" src=<%= movie.poster %>></a>
     </div>
     <div class="card-stacked">
       <div id="cards-content">
-        <p><%= movie.description.split(' ')[0..15].join(' ') + '...' %></p>
+        <p><%= movie.description.split(' ')[0..25].join(' ') + '...' %></p>
         <% average_rating(movie.reviews).times do %>
         	<img height="30" src=/images/popcorn.png>
         <% end %>

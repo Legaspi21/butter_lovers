@@ -45,7 +45,7 @@ User.create(username:"julian",email:"julian@butterlovers.com",password:"password
 97.times do 
 @ratingint = [1,2,3,4,5].sample
 @userid = [2,3,4,5].sample	
-Review.create(rating:@ratingint,body:Faker::Lorem.paragraph(4, false, 8),user_id:@userid,movie_id:@current_movie)
+Review.create(rating:@ratingint,body:Forgery(:lorem_ipsum).paragraphs(rand(1..4)),user_id:@userid,movie_id:@current_movie)
 
 @current_movie += 1
 end

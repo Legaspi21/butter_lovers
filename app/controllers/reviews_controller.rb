@@ -9,8 +9,14 @@ class ReviewsController < ApplicationController
 		@review.user = @current_user
 		@review.movie = @movie
 
+
 		if @review.save
-			redirect_to movie_path(@movie)
+			if request.xhr?
+				p @review
+				render partial: '/movies/review', locals: {review: @review}
+			else
+				redirect_to movie_path(@movie)
+			end
 		else
 			flash[:notice] = "Please fill out the information the post a review!"
 			redirect_to movie_path(@movie.id)
@@ -18,7 +24,8 @@ class ReviewsController < ApplicationController
 	end
 
 
-	private
+private
+
 
 	def review_params
 		params.require(:review).permit(:body, :rating, :movie_id)
