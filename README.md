@@ -1,24 +1,21 @@
-# README
+# Butter Lovers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Film review app with a unique popcorn rating system that displays verified film critic reviews with precidence over basic user reviews and allows users to make comments on films.
 
-Things you may want to cover:
+Things we covered on this project:
 
-* Ruby version
+* Ruby on Rails
 
-* System dependencies
+* Materialize
 
-* Configuration
+* User authentication with BCrypt
 
-* Database creation
+* OMDB API
 
-* Database initialization
+* Heroku deployment
 
-* How to run the test suite
+* Agile Team Workflow
 
-* Services (job queues, cache servers, search engines, etc.)
+* Git Workflow
 
-* Deployment instructions
-
-* ...
+* Pair Programming
