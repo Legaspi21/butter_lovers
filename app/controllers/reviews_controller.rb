@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
 				redirect_to movie_path(@movie)
 			end
 		else
-			flash[:notice] = "Please fill out the information the post a review!"
+                        flash[:notice] = "Please fill out the information to post a review!"
 			redirect_to movie_path(@movie.id)
 		end
 	end
